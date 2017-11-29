@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1511880894 source:c:\users\einar orri\desktop\tölvunarfræði\3vikna\superhero\main.cpp
+	<iostream>
+	"SuperHero.h"
+
+1511878207 c:\users\einar orri\desktop\tölvunarfræði\3vikna\superhero\superhero.h
+	<iostream>
+	<string>
+	<fstream>
+
+1511879159 source:c:\users\einar orri\desktop\tölvunarfræði\3vikna\superhero\superhero.cpp
+	"SuperHero.h"
+	<iostream>
+	<string>
+	<fstream>
+
+1511880894 source:c:\users\jón grímsson\downloads\superhero-rétta\superhero\main.cpp
+	<iostream>
+	"SuperHero.h"
+
+1511878207 c:\users\jón grímsson\downloads\superhero-rétta\superhero\superhero.h
+	<iostream>
+	<string>
+	<fstream>
+
