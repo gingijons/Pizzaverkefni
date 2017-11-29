@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1511814623 source:c:\users\gingi\documents\codeblox\1 liður a\main.cpp
+	<iostream>
+	<string>
+	<fstream>
+
