@@ -1,7 +1,8 @@
 #include "Donimos.h"
-
 #include "Domain.h"
 #include "MainUI.h"
+#include <vector>
+#include <iostream>
 
 Donimos::Donimos()
 {
@@ -11,9 +12,110 @@ Donimos::Donimos()
 
 void Donimos::order()
 {
-    cout << a;
-    *str[1000] = repo.readorders(a);
+    Domain domain;
 
+    repo.readorders(a, str);
+    domain.printorders(a, str);
+    domain.add_order(a);
+
+}
+
+void Donimos::neworder(int a)
+{
+    Donimos donimos;
+
+    int j;
+    int price = 0;
+    char login;
+    char cont;
+    int order_num;
+    char paid;
+    string store;
+    string size;
+    char p_or_d;
+    string sorted;
+    vector<string> top;
+    string crust;
+
+    size = donimos.getpizzasize();
+    crust = donimos.getcrust();
+    donimos.gettoppings(top, j);
+    cout << top[1];
+}
+
+string Donimos::getpizzasize()
+{
+    string size;
+    do
+    {
+        cout << "Size (lit mid sto): ";
+        cin >> size;
+        if(size == "sto" || size == "lit" || size == "mid")
+        {
+            break;
+        }
+        else
+        {
+            cout << "invalid size" << endl;
+        }
+    }
+    while(true);
+
+    return size;
+
+}
+
+string Donimos::getcrust()
+{
+    string crust;
+
+    do
+    {
+        cout << "crust (italy light org): ";
+        cin >> crust;
+        if(crust == "italy" || crust == "light" || crust == "org")
+        {
+            break;
+        }
+        else
+        {
+            cout << "invalid crust" << endl;
+        }
+    }
+    while(true);
+
+    return crust;
+}
+
+void Donimos::gettoppings(vector<string> top, int j)
+{
+    cout << "topping: (ppp, bei, rjo, sve, ana, ski) n = exit " << endl;
+    int i = 0;
+    j = i;
+    top.clear();
+
+    do
+    {
+        string topping;
+        cin >> topping;
+        //topping == "ppp" || topping == "rjo" || topping == "sve" || topping == "bei"
+
+        //str[i].find('\\')
+        if(topping == "ppp" || topping == "rjo" || topping == "sve" || topping == "bei" || topping == "ana" || topping == "ski")
+        {
+            top.push_back(topping);
+            j+=1;
+        }
+        else
+        {
+            break;
+        }
+
+    }while(true);
+}
+
+void Donimos::y_printorders(int a, string str[])
+{
     for(int i = 0; i < a; i++)
     {
         cout << str[i] << endl;

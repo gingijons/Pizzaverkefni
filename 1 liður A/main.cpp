@@ -55,7 +55,7 @@ int main()
             break;
         }
 
-        cout << "Would you like the next ten lines? ";
+        cout << "Would you like the next ten lines? (y/n) ";
         cin >> cont;
 
     }

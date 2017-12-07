@@ -12,7 +12,7 @@ class Repo
         virtual ~Repo();
 
 
-        string readorders(int* a);
+        void readorders(int& a, string str[1000]);
 
     protected:
 

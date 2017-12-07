@@ -6,6 +6,7 @@
 
 Domain::Domain()
 {
+    Donimos donimos;
     //ctor
 }
 
@@ -30,6 +31,30 @@ void Domain::login(char* login)
 
     }
 
+}
+
+void Domain::printorders(int a, string str[])
+{
+    Donimos donimos;
+
+    cout << "Would you like to print orders? (y/n): " << input;
+    cin >> input;
+    if(input == 'y'|| input == 'Y')
+    {
+        donimos.y_printorders(a, str);
+    }
+}
+
+void Domain::add_order(int a)
+{
+    Donimos donimos;
+
+    cout << "would you like to add a new order? (y/n): ";
+    cin >> input;
+    if(input == 'y'|| input == 'Y')
+    {
+        donimos.neworder(a);
+    }
 }
 
 ostream& operator<< (ostream& out, const Domain& domain)

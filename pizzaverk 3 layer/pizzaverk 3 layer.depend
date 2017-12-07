@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1512569206 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\src\domain.cpp
+	"Domain.h"
+
+1512569206 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\include\domain.h
+
+1512569160 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\src\donimos.cpp
+	"Donimos.h"
+
+1512569160 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\include\donimos.h
+
+1512570004 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\main.cpp
+	<iostream>
+	"MainUI.h"
+	"Donimos.h"
+
+1512570935 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\include\mainui.h
+	<iostream>
+
+1512569175 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\src\repo.cpp
+	"Repo.h"
+
+1512569175 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\include\repo.h
+
+1512570588 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\pizzaverk 3 layer\src\mainui.cpp
+	"MainUI.h"
+

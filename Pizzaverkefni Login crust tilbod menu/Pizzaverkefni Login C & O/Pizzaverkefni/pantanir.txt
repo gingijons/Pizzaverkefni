@@ -1,0 +1,25 @@
+<1> <lit> <sve> <1649> <greidd>
+<2> <sto> <sve> <3149> <greidd>
+<3> <sto> <ppp> <3149>
+<4> <mid> <sve rjo> <2299>
+<5> <lit> <rjo sve> <1799> <greidd>
+<6> <mid> <sve sve sve> <2449>
+<7> <lit> <org> <sve ppp> <1799>
+<8> <sto> <light> <ski ana> <3299>
+<9> <sto> <org> <ana bei ppp> <3449>
+<10> <sto> <org> <ana bei ppp> <3449>
+<11> <lit> <org> <ana bei ppp> <1949>
+<12> <lit> <org> <ana bei ppp> <1949>
+<13> <lit> <org> <ana bei ski> <1949>
+<14> <sto> <light> <ana bei ppp sve> <3599> <greidd>
+<15> <sto> <light> <ana ppp ski> <3449>
+<16> <sto> <light> <> <3299>
+<17> <sto> <italy> <> <3299>
+<18> <mid> <italy> <hawaiian> <2299>
+<19> <sto> <italy> <PS2> <3299> <greidd>
+<20> <sto> <org> <Bahamas> <3449>
+<21> <sto> <light> <ppp ski> <3299>
+<22> <sto> <light> <ppp ski> <1690>
+<23> <sto> <light> <Bahamas> <3449> <greidd>
+<24> <mid> <italy> <PS2> <2299>
+<25> <mid> <italy> <ppp> <2149> <greidd>

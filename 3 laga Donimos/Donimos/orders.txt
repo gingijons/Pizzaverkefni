@@ -1,0 +1,43 @@
+<1> <sto> <sve> <3149> <greidd>
+<2> <sto> <sve> <3149> <greidd>
+<3> <sto> <ppp> <3149> <greidd>
+<4> <mid> <sve rjo> <2299>
+<5> <lit> <rjo sve> <1799> <greidd>
+<6> <mid> <sve sve sve> <2449>
+<7> <lit> <org> <sve ppp> <1799>
+<8> <sto> <light> <ski ana> <3299>
+<9> <sto> <org> <ana bei ppp> <3449>
+<10> <sto> <org> <ana bei ppp> <3449>
+<11> <lit> <org> <ana bei ppp> <1949>
+<12> <lit> <org> <ana bei ppp> <1949>
+<13> <lit> <org> <ana bei ski> <1949>
+<14> <sto> <light> <ana bei ppp sve> <3599> <greidd>
+<15> <sto> <light> <ana ppp ski> <3449>
+<16> <sto> <light> <> <3299>
+<17> <sto> <italy> <> <3299> <Ready>
+<18> <mid> <italy> <hawaiian> <2299> <Ready>
+<19> <sto> <italy> <PS2> <3299> <greidd> <Ready>
+<20> <sto> <org> <Bahamas> <3449>
+<21> <sto> <light> <ppp ski> <3299>
+<22> <sto> <light> <ppp ski> <1690>  <Ready> <greidd>
+<23> <sto> <light> <Bahamas> <3449> <greidd> <In progress> <Ready>
+<24> <mid> <italy> <PS2> <2299> <greidd> <In progress> <Ready>
+<25> <mid> <italy> <ppp> <2149> <greidd>  <Ready> <Ready>
+<26> <sto> <italy> <Bahamas> <3449>
+<27> <sto> <org> <Hawaiian> <1690>
+<28> <sto> <org> <ppp ppp ppp ppp> <3599>
+<29> <sto> <org> <ppp ppp> <1690> <greidd>
+<30> <sto> <org> <Bahamas> <3449> <greidd>
+<31> <sto> <org> <ana ski sve> <3449> <greidd> <Ready>
+<32> <lit> <org> <ppp> <1649> <greidd> <Delivery>
+<33> <sto> <org> <Hawaiian> <1690> <greidd> <Pickup> <skeifan>
+<34> <lit> <org> <ppp> <1649> <n>
+<35> <sto> <org> <ppp> <3149> <Pickup> <dalbraut>
+<36> <lit> <org> <> <1499> <Delivery> <skeifan>
+<37> <sto> <org> <ppp> <3149> <Delivery> <sk>
+<38> <sto> <org> <ppp> <3149> <Pickup> <asbru>
+<39> <lit> <org> <sve> <1649> <greidd> <Pickup> <skeifan>
+<40> <sto> <org> <ppp> <3149> <Pickup> <skeifan>
+<41> <sto> <org> <sve> <3149> <greidd> <Delivery> <mjodd>
+<42> <sto> <org> <ana sve> <1690> <greidd> <Pickup> <skeifan>
+<43> <lit> <italy> <bei ppp ski> <1949> <greidd> <Delivery> <skeifan>

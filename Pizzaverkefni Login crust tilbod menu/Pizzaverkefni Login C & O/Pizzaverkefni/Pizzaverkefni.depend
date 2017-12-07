@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1511998711 source:c:\users\gingi\documents\codeblox\pizzaverkefni\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+
+1511966254 source:c:\users\jón grímsson\documents\codeblox\pizzaverkefni\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+
+1512053077 source:c:\users\jón grímsson\documents\codeblox\pizzaverkefni login c & o\pizzaverkefni\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+
+1512072555 source:c:\users\gingi\downloads\pizzaverkefni login c & o (2)\pizzaverkefni login c & o\pizzaverkefni\main.cpp
+	<iostream>
+	<fstream>
+	<string>
+	<vector>
+	<algorithm>
+

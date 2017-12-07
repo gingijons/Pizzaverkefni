@@ -9,13 +9,12 @@ Repo::Repo()
     //ctor
 }
 
-string Repo::readorders(int& a)
+void Repo::readorders(int& a, string str[1000])
 {
     ifstream fin;
     ifstream bin;
     ofstream fout;
     string b;
-    string str[1000];
 
     cout << a;
 
@@ -28,7 +27,7 @@ string Repo::readorders(int& a)
 
     cout << a;
 
-    /*fin.open("orders.txt");
+    fin.open("orders.txt");
 
 
     for(int i = 0; i < a; i++)
@@ -48,9 +47,7 @@ string Repo::readorders(int& a)
     }
     fout.close();
 
-    cout << a;*/
-
-    return str[1000];
+    cout << a;
 }
 
 Repo::~Repo()
