@@ -57,6 +57,49 @@ void Domain::add_order(int a)
     }
 }
 
+void Domain::on_menu(vector<string> *top, string sorted)
+{
+    if(sorted == "anaski")
+    {
+        top->clear();
+        top->push_back("Hawaiian");
+    }
+
+    if(sorted == "anabeiski")
+    {
+        top->clear();
+        top->push_back("Bahamas");
+    }
+
+    if(sorted == "pppsve")
+    {
+        top->clear();
+        top->push_back("PS2");
+    }
+}
+
+int Domain::getprice(string size, int j)
+{
+    int price;
+
+    if(size == "lit")
+    {
+        price = 1499;
+    }
+    else if(size == "mid")
+    {
+        price = 1999;
+    }
+    else
+    {
+        price = 2999;
+    }
+
+    price += (j*150);
+
+    return price;
+}
+
 ostream& operator<< (ostream& out, const Domain& domain)
 {
     out << domain;

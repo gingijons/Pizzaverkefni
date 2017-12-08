@@ -2,7 +2,9 @@
 #define DOMAIN_H
 #include <iostream>
 #include "Donimos.h"
-#include "Domain.h"
+#include <vector>
+
+
 
 using namespace std;
 
@@ -16,6 +18,8 @@ class Domain
         void printorders(int a, string str[]);
         void add_order(int a);
         char input;
+        void on_menu(vector<string> *top, string sorted);
+        getprice(string size, int j);
 
 
 

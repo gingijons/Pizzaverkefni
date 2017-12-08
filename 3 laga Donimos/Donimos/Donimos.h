@@ -3,6 +3,7 @@
 #include <string>
 #include "Repo.h"
 #include "Domain.h"
+#include "MainUI.h"
 #include <vector>
 
 using namespace std;
@@ -23,16 +24,20 @@ class Donimos
         void neworder(int a);
         string getpizzasize();
         string getcrust();
-        void gettoppings(vector<string> top, int j);
+        void gettoppings(vector<string>* top, int* j);
+        string sorttoppings(vector<string> *top);
+
+
 
 
         friend ostream& operator<< (ostream& out, const Donimos& donimos);
 
     protected:
 
-    private:
 
+    private:
         Repo repo;
+        MainUI main;
 
 
 };

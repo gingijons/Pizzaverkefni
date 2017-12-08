@@ -2,29 +2,29 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="Domain.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Donimos.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="896" topLine="32" />
+			<Cursor1 position="895" topLine="27" />
+		</Cursor>
+		<Folding>
+			<Collapse line="53" />
+			<Collapse line="75" />
+			<Collapse line="97" />
+		</Folding>
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="184" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Repo.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Domain.cpp" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="504" topLine="29" />
-		</Cursor>
-	</File>
-	<File name="Donimos.cpp" open="1" top="1" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="702" topLine="33" />
+			<Cursor1 position="1571" topLine="54" />
 		</Cursor>
 	</File>
 	<File name="Domain.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="327" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="Donimos.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="491" topLine="16" />
+			<Cursor1 position="436" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="MainUI.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,19 +32,24 @@
 			<Cursor1 position="243" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="Repo.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Repo.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="192" topLine="0" />
+			<Cursor1 position="19" topLine="1" />
 		</Cursor>
 	</File>
-	<File name="main.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Donimos.h" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="184" topLine="0" />
+			<Cursor1 position="768" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="MainUI.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1242" topLine="4" />
+			<Cursor1 position="1242" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Repo.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="192" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

@@ -3,6 +3,7 @@
 #include "MainUI.h"
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 Donimos::Donimos()
 {
@@ -23,8 +24,9 @@ void Donimos::order()
 void Donimos::neworder(int a)
 {
     Donimos donimos;
+    Domain domain;
 
-    int j;
+    int j = 0;
     int price = 0;
     char login;
     char cont;
@@ -39,8 +41,13 @@ void Donimos::neworder(int a)
 
     size = donimos.getpizzasize();
     crust = donimos.getcrust();
-    donimos.gettoppings(top, j);
-    cout << top[1];
+    donimos.gettoppings(&top, &j);
+    sorted = donimos.sorttoppings(&top);
+    domain.on_menu(&top, sorted);
+    price = domain.getprice(size, j);
+    cout << top[0] << " " << j << " " << price;
+
+
 }
 
 string Donimos::getpizzasize()
@@ -87,12 +94,12 @@ string Donimos::getcrust()
     return crust;
 }
 
-void Donimos::gettoppings(vector<string> top, int j)
+void Donimos::gettoppings(vector<string>* top, int* j)
 {
     cout << "topping: (ppp, bei, rjo, sve, ana, ski) n = exit " << endl;
     int i = 0;
-    j = i;
-    top.clear();
+    *j = i;
+    top->clear();
 
     do
     {
@@ -103,8 +110,8 @@ void Donimos::gettoppings(vector<string> top, int j)
         //str[i].find('\\')
         if(topping == "ppp" || topping == "rjo" || topping == "sve" || topping == "bei" || topping == "ana" || topping == "ski")
         {
-            top.push_back(topping);
-            j+=1;
+            top->push_back(topping);
+            *j+=1;
         }
         else
         {
@@ -120,6 +127,20 @@ void Donimos::y_printorders(int a, string str[])
     {
         cout << str[i] << endl;
     }
+}
+
+string Donimos::sorttoppings(vector<string> *top)
+{
+    string sorted;
+
+    sort(top->begin(), top->end());
+
+    for(unsigned int i = 0; i < top->size(); i++)
+    {
+        sorted += (*top)[i];
+    }
+
+    return sorted;
 }
 
 ostream& operator<< (ostream& out, const Donimos& donimos)
