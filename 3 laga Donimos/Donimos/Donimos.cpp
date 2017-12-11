@@ -28,24 +28,44 @@ void Donimos::neworder(int a)
 
     int j = 0;
     int price = 0;
-    char login;
     char cont;
-    int order_num;
+    //int order_num;
     char paid;
     string store;
     string size;
-    char p_or_d;
+    string p_or_d;
     string sorted;
     vector<string> top;
     string crust;
+    string soda;
+    bool breadsticks;
 
-    size = donimos.getpizzasize();
-    crust = donimos.getcrust();
-    donimos.gettoppings(&top, &j);
-    sorted = donimos.sorttoppings(&top);
-    domain.on_menu(&top, sorted);
-    price = domain.getprice(size, j);
-    cout << top[0] << " " << j << " " << price;
+    do
+    {
+        size = donimos.getpizzasize();
+        crust = donimos.getcrust();
+        donimos.gettoppings(&top, &j);
+        sorted = donimos.sorttoppings(&top);
+        domain.on_menu(&top, sorted);
+        soda = domain.getsoda();
+        breadsticks = domain.getbreadsticks();
+        price = domain.getprice(size, j);
+        paid = donimos.paid();
+        store = repo.getstore(store);
+        p_or_d = domain.pickup_or_delivery();
+        repo.write_order(size, crust, top, price, paid, store, p_or_d, a);
+        a++;
+
+        do
+        {
+            cout << "another order? (y/n): ";
+            cin >> cont;
+            cout << endl;
+        }while(cont != 'y' && cont != 'Y' && cont != 'n' && cont != 'N');
+
+        cout << "-----------------------------------------------------" << endl;
+        cout << endl;
+    }while(cont == 'y' || cont == 'Y');
 
 
 }
@@ -142,6 +162,15 @@ string Donimos::sorttoppings(vector<string> *top)
 
     return sorted;
 }
+
+char Donimos::paid()
+{
+    char paid;
+    cout << "Mark paid? (y/n): ";
+    cin >> paid;
+    return paid;
+}
+
 
 ostream& operator<< (ostream& out, const Donimos& donimos)
 {

@@ -11,12 +11,26 @@ using namespace std;
 int main()
 {
     char login;
+    char cont;
 
     MainUI menu;
     Domain domain;
     menu.printlogo();
-    login = menu.getlogin();
-    cout << login;
-    domain.login(&login);
+    do
+    {
+        login = menu.getlogin();
+        domain.login(&login);
+        do
+        {
+            cout << "Logout or Quit? (L/Q): ";
+            cin >> cont;
+            cout << endl;
+        }while(cont != 'l' && cont != 'L' && cont != 'q' && cont != 'Q');
+
+        cout << "-----------------------------------------------------" << endl;
+        cout << endl;
+    }while(cont == 'l' || cont == 'L');
+
+
     return 0;
 }

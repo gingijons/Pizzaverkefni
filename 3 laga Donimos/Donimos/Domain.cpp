@@ -37,7 +37,7 @@ void Domain::printorders(int a, string str[])
 {
     Donimos donimos;
 
-    cout << "Would you like to print orders? (y/n): " << input;
+    cout << "Would you like to print orders? (y/n): ";
     cin >> input;
     if(input == 'y'|| input == 'Y')
     {
@@ -90,14 +90,74 @@ int Domain::getprice(string size, int j)
     {
         price = 1999;
     }
-    else
+    else if(size == "sto")
     {
         price = 2999;
     }
 
     price += (j*150);
 
+    if(size == "sto" && j == 2)
+    {
+        price = 1690;
+    }
+
     return price;
+}
+
+string Domain::markpaid(string& paid)
+{
+    if(paid == "y" || paid == "Y")
+    {
+        paid = "Greidd";
+    }
+
+    return paid;
+}
+
+char Domain::pickup_or_delivery()
+{
+    char p_or_d;
+
+    do
+    {
+        cout << "Pickup or delivery (P = pickup, D = delivery): ";
+        cin >> p_or_d;
+        if(p_or_d == 'd' || p_or_d == 'D' || p_or_d == 'p' || p_or_d == 'P')
+        {
+            break;
+        }
+        else
+        {
+            cout << "Invalid input" << endl;
+        }
+    }while(true);
+
+    return p_or_d;
+}
+
+bool Domain::getbreadsticks()
+{
+    bool breadsticks;
+    do
+    {
+        cout << "breadsticks (y/n): ";
+        cin >> breadsticks;
+    }while(breadsticks != 'y' && breadsticks != 'Y' && breadsticks != 'n' && breadsticks != 'N');
+
+    if(breadsticks == 'y' || breadsticks == 'Y')
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+string Domain::getsoda()
+{
+
 }
 
 ostream& operator<< (ostream& out, const Domain& domain)

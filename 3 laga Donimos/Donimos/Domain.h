@@ -19,7 +19,12 @@ class Domain
         void add_order(int a);
         char input;
         void on_menu(vector<string> *top, string sorted);
-        getprice(string size, int j);
+        int getprice(string size, int j);
+        string markpaid(string& paid);
+        char pickup_or_delivery();
+        bool getbreadsticks();
+        string getsoda();
+
 
 
 

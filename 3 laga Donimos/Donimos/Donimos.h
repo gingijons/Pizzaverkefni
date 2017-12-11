@@ -26,9 +26,8 @@ class Donimos
         string getcrust();
         void gettoppings(vector<string>* top, int* j);
         string sorttoppings(vector<string> *top);
-
-
-
+        char paid();
+        char pickup_or_delivery();
 
         friend ostream& operator<< (ostream& out, const Donimos& donimos);
 

@@ -41,3 +41,13 @@
 <41> <sto> <org> <sve> <3149> <greidd> <Delivery> <mjodd>
 <42> <sto> <org> <ana sve> <1690> <greidd> <Pickup> <skeifan>
 <43> <lit> <italy> <bei ppp ski> <1949> <greidd> <Delivery> <skeifan>
+<44> <sto> <org> <bei ppp> <1690> <Pickup> <skeifan>
+<45> <lit> <light> <Hawaiian> <1799> <Delivery> <skeifan>
+<46> <sto> <org> <rjo> <3149> <Pickup> <dalbraut>
+<47> <lit> <light> <ana> <1649> <greidd> <mjodd>
+<48> <mid> <org> <sve> <2149> <Pickup> <skeifan>
+<49> <lit> <org> <bei> <1649> <greidd> <dalbraut>
+<50> <mid> <org> <sve> <2149> <Pickup> <mjodd>
+<51> <lit> <italy> <ana sve> <1799> <greidd> <mjodd>
+<52> <lit> <org> <ana> <1649> <greidd> <mjodd>
+<53> <lit> <italy> <ppp> <1649> <greidd> <skeifan>

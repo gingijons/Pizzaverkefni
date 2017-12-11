@@ -16,7 +16,7 @@ void Repo::readorders(int& a, string str[1000])
     ofstream fout;
     string b;
 
-    cout << a;
+    //cout << a;
 
     bin.open("orders.txt");
 
@@ -25,7 +25,7 @@ void Repo::readorders(int& a, string str[1000])
         a++;
     }
 
-    cout << a;
+    //cout << a;
 
     fin.open("orders.txt");
 
@@ -39,7 +39,7 @@ void Repo::readorders(int& a, string str[1000])
     bin.close();
     fin.close();
 
-    fout.open("pantanir.txt");
+    fout.open("orders.txt");
 
     for(int i = 0; i < a; i++)
     {
@@ -47,7 +47,130 @@ void Repo::readorders(int& a, string str[1000])
     }
     fout.close();
 
+    //cout << a;
+}
+
+string Repo::getstore(string store)
+{
+    ifstream bin;
+    string storelist[50];
+    ifstream st;
+    string b;
+    int a = 0;
+    bin.open("stores.txt");
+    while(getline(bin, b))
+    {
+        a++;
+    }
     cout << a;
+    st.open("stores.txt");
+    for(int i = 0; i < a; i++)
+    {
+        getline(st, storelist[i]);
+    }
+    do
+    {
+        cout << "Store (";
+        for(int i = 0; i < a; i++)
+        {
+            cout << storelist[i] << " ";
+        }
+        cout << "): ";
+        cin >> store;
+        for(int i = 0; i < a; i++)
+        {
+            if(storelist[i] == store)
+            {
+                return store;
+                break;
+
+            }
+        }
+    cout << "invalid store input" << endl;
+
+    }while(true);
+}
+
+void Repo::write_order(string size, string crust, vector<string> top, int price, char paid, string store, string p_or_d, int a)
+{
+    ofstream fout;
+    fout.open("orders.txt", ios::app);
+
+    cout << "<" << a+1 << "> <" << size << "> <" << crust << "> <";
+    for(unsigned int i = 0; i < top.size(); i++)
+    {
+        if(!top[i].empty())
+        {
+            if(i==top.size()-1)
+            {
+                cout << top[i];
+            }
+            else
+            {
+                cout << top[i] << " ";
+            }
+
+        }
+        if(top[i].empty()==true)
+        {
+            break;
+        }
+    }
+    cout << "> <" << price << ">";
+
+    fout << "<" << a+1 << "> <" << size << "> <" << crust << "> <";
+
+    for(unsigned int i = 0; i < top.size(); i++)
+    {
+        if(!top[i].empty())
+        {
+            if(i==top.size()-1)
+            {
+                fout << top[i];
+            }
+            else
+            {
+                fout << top[i] << " ";
+            }
+
+        }
+        if(top[i].empty()==true)
+        {
+            break;
+        }
+    }
+
+    fout << "> <" << price << ">";
+
+    if(paid == 'y' || paid == 'Y')
+    {
+        fout << " <greidd>";
+        cout << " <greidd>";
+    }
+
+    else if(p_or_d == "d" || p_or_d == "D")
+    {
+        fout << " <Delivery>";
+        cout << " <Delivery>";
+    }
+
+    else if(p_or_d == "p" || p_or_d == "P")
+    {
+        fout << " <Pickup>";
+        cout << " <Pickup>";
+    }
+
+    cout << " <" << store << ">" << endl;
+    fout << " <" << store << ">" << endl;
+
+    fout.close();
+    a++;
+}
+
+ostream& operator<< (ostream& out, const Repo& repo)
+{
+    out << repo;
+    return out;
 }
 
 Repo::~Repo()
