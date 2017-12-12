@@ -18,7 +18,22 @@ void Donimos::order()
     repo.readorders(a, str);
     domain.printorders(a, str);
     domain.add_order(a);
+}
 
+void Donimos::cashier()
+{
+    Domain domain;
+    repo.readorders(a, str);
+    domain.listOrder(a, str);
+    domain.markPaid(a, str);
+}
+
+void Donimos::makeline()
+{
+    Domain domain;
+
+    //repo.readorders(a, str);
+    domain.makeline_list(a, str);
 }
 
 void Donimos::neworder(int a)
@@ -147,6 +162,7 @@ void Donimos::y_printorders(int a, string str[])
     {
         cout << str[i] << endl;
     }
+    cout << a;
 }
 
 string Donimos::sorttoppings(vector<string> *top)
@@ -171,6 +187,26 @@ char Donimos::paid()
     return paid;
 }
 
+void Donimos::list_orders(int a, string str[])
+{
+    int howmany;
+    cout << "There is a total of " << a << " orders. How many orders from the last order do you want displayed? ";
+    cin >> howmany;
+    for(int i = a-howmany; i < a; i++)
+    {
+        cout << str[i] << endl;
+    }
+    cout << endl;
+}
+
+void Donimos::list_of_ten(int a, string str[])
+{
+    for(int i = a-10; i < a; i++)
+    {
+        cout << str[i] << endl;
+    }
+    cout << endl;
+}
 
 ostream& operator<< (ostream& out, const Donimos& donimos)
 {

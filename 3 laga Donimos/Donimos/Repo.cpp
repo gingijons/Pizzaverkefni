@@ -36,17 +36,24 @@ void Repo::change_stores()
     {
         a++;
     }
+    bin.close();
 
-    string storelist[a];
-
-    cout << endl;
+    string storelist[50];
 
     st.open("stores.txt");
+
+    if(st.is_open())
+    {
+        cout << "heyy";
+    }
     for(int i = 0; i < a; i++)
     {
         getline(st, storelist[i]);
-        cout << i + 1 << " = " << storelist[i] << endl;
+        //fout << storelist[i];
     }
+    st.close();
+
+    cout << endl;
 
     cout << endl;
     cout << "1 = Add store, 2 = remove store: ";
@@ -55,19 +62,46 @@ void Repo::change_stores()
     if(num == 1)
     {
         string newstore;
-        cout << "Enter name(all lowercase): ";
+        cout << "Enter name (all lowercase): ";
         cin >> newstore;
-        st.open("stores.txt", ios::app);
+        cout << newstore;
+        fout.open("stores.txt");
+        for(int i = 0; i < a; i++)
+        {
+            fout << storelist[i] << endl;
+        }
         fout << newstore;
-        st.close();
+        fout.close();
     }
     if(num == 2)
     {
+        int store;
         st.open("stores.txt");
         for(int i = 0; i < a; i++)
         {
             getline(st, storelist[i]);
             cout << i + 1 << " = " << storelist[i] << endl;
+        }
+        cout << "What store to remove: ";
+        cin >> store;
+        store -= 1;
+        fout.open("stores.txt");
+        for(int i = 0; i < a; i++)
+        {
+            if(i != store)
+            {
+                fout << storelist[i] << endl;
+            }
+        }
+        cout << endl;
+
+        if(store >= a)
+        {
+            cout << "nothing was removed";
+        }
+        else
+        {
+            cout << storelist[store] << " has been removed" << endl;
         }
     }
 
@@ -93,6 +127,24 @@ void Repo::change_menu()
 
 }
 
+void Repo::inprogress(int a, int order_num, string str[1000])
+{
+    ofstream fout;
+    fout.open("orders.txt");
+    for(int i = 0; i < a; i++)
+    {
+        if(i==order_num)
+        {
+            fout << str[order_num] << " <In progress>" << endl;
+        }
+        else
+        {
+            fout << str[i] << endl;
+        }
+    }
+    fout.close();
+}
+
 void Repo::readorders(int& a, string str[1000])
 {
     ifstream fin;
@@ -100,16 +152,16 @@ void Repo::readorders(int& a, string str[1000])
     ofstream fout;
     string b;
 
-    //cout << a;
+    //cout << a << " ";
 
-    bin.open("orders.txt");
+    bin.open("orders.txt", ios::app);
 
     while(getline(bin, b))
     {
         a++;
     }
 
-    //cout << a;
+    //cout << a << " ";
 
     fin.open("orders.txt");
 
@@ -131,7 +183,7 @@ void Repo::readorders(int& a, string str[1000])
     }
     fout.close();
 
-    //cout << a;
+    //cout << a << " ";
 }
 
 string Repo::getstore(string store)
@@ -289,6 +341,50 @@ string Repo::readsoda()
     return soda;
 }
 
+void Repo::ready(int x, int z, int a, int order_num, string str[1000])
+{
+    ofstream fout;
+    fout.open("orders.txt");
+    for(int i = 0; i < a; i++)
+    {
+        if(i==order_num)
+        {
+            if(str[order_num].find("progress") != string::npos)
+            {
+                str[order_num].replace(x, 13, "<Ready>");
+                fout << str[order_num] << endl;
+            }
+            else
+            {
+                fout << str[order_num] << " <Ready>" << endl;
+            }
+
+        }
+        else
+        {
+            fout << str[i] << endl;
+        }
+    fout.close();
+    }
+}
+
+void Repo::markpaid(int a, int order_num, string str[1000])
+{
+    ofstream fout;
+    fout.open("orders.txt");
+    for(int i = 0; i < a; i++)
+    {
+        if(i==order_num)
+        {
+            fout << str[order_num] << " <greidd>" << endl;
+        }
+        else
+        {
+            fout << str[i] << endl;
+        }
+        fout.close();
+    }
+}
 
 ostream& operator<< (ostream& out, const Repo& repo)
 {

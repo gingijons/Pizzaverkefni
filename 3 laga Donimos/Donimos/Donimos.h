@@ -19,6 +19,10 @@ class Donimos
         string str[1000];
 
         void order();
+        void cashier();
+        void makeline();
+        void list_orders(int a, string str[]);
+        void list_of_ten(int a, string str[]);
         void printorders();
         void y_printorders(int a, string str[]);
         void neworder(int a);

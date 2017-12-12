@@ -21,7 +21,7 @@ void Domain::login(char* login)
     }
     if(*login == 'M' || *login == 'm')
     {
-
+        donimos.makeline();
     }
     if(*login == 'O' || *login == 'o')
     {
@@ -85,6 +85,97 @@ void Domain::add_order(int a)
     if(input == 'y'|| input == 'Y')
     {
         donimos.neworder(a);
+    }
+}
+
+void Domain::listOrder(int a, string str[])
+{
+    Donimos donimos;
+    cout << "would you like a list of the most recent orders? (y/n): ";
+    cin >> input;
+    if(input == 'y'|| input == 'Y')
+    {
+        donimos.list_orders(a, str);
+    }
+}
+
+void Domain::listOfTen(int a, string str[])
+{
+    Donimos donimos;
+    cout << "Printing out the last ten orders: " << endl;
+
+    donimos.list_of_ten(a, str);
+
+}
+
+void Domain::markPaid(int a, string str[])
+{
+    Donimos donimos;
+    Repo repo;
+    //ofstream fout;
+    int order_num;
+    char cont;
+    char paid;
+    do
+    {
+
+        cout << "Enter order number: ";
+        cin >> order_num;
+        cout << endl;
+        order_num -= 1;
+        if(order_num > a)
+        {
+            cout << "There are only " << a << " orders" << endl;
+        }
+        else
+        {
+            break;
+        }
+    }
+    while(true);
+
+    cout << str[order_num];
+    cout << endl;
+    cout << endl;
+    cout << "Mark paid? (y/n): ";
+    cin >> paid;
+    cout << endl;
+
+    if(paid == 'y' || paid == 'Y')
+    {
+
+        if(str[order_num].find("greidd") != string::npos)
+        {
+            cout << "Already paid" << endl;
+        }
+        else
+        {
+            repo.markpaid(a, order_num, str);
+            /*fout.open("orders.txt");
+            for(int i = 0; i < a; i++)
+            {
+                if(i==order_num)
+                {
+                    fout << str[order_num] << " <greidd>" << endl;
+                }
+                else
+                {
+                    fout << str[i] << endl;
+                }
+                fout.close();
+            }*/
+            cout << str[order_num] << " <greidd>" << endl;
+        }
+    }
+    cout << "pay for another order (y/n): ";
+    cin >> cont;
+    cout << endl;
+    cout << "-----------------------------------------------------" << endl;
+    cout << endl;
+
+    if(cont == 'y' || cont == 'Y')
+    {
+        donimos.list_orders(a, str);
     }
 }
 
@@ -212,6 +303,137 @@ string Domain::getsoda()
         type = repo.readsoda();
     }
     return type;
+}
+
+void Domain::makeline_list(int a, string str[]){
+
+    Repo repo;
+    Domain domain;
+
+    //ifstream fin;
+    char login;
+    char cont;
+    int order_num;
+    //ofstream fout;
+    char status;
+
+    //cout << a;
+
+    do
+    {
+        repo.readorders(a, str);
+        domain.printorders(a, str);
+        /*fin.open("orders.txt");
+        for(int i = 0; i < a; i++)
+        {
+            getline(fin, str[i]);
+        }*/
+
+        /*cout << "Would you like a list of the 10 most recent orders? (y/n): ";
+        cin >> cont;
+        if(cont == 'y' || cont == 'Y')
+        {
+
+            for(int i = a-10; i < a; i++)
+            {
+                cout << str[i] << endl;
+            }
+            //fin.close();
+        }*/
+
+        do
+        {
+            cout << "Enter order number: ";
+            cin >> order_num;
+            cout << endl;
+            order_num -= 1;
+            if(order_num > a)
+            {
+                cout << "There are only " << a << " orders" << endl;
+            }
+            else{break;}
+        }while(true);
+
+        cout << str[order_num];
+        cout << endl;
+        cout << endl;
+        cout << "Mark status (I = In progress, R = Ready): ";
+        cin >> status;
+        cout << endl;
+
+        if(status == 'i' || status == 'I')
+        {
+            if(str[order_num].find("In progress") != string::npos)
+            {
+                cout << "Already in progress" << endl;
+            }
+            else if(str[order_num].find("Ready") != string::npos)
+            {
+                cout << "Cannot mark 'In progress', order is ready" << endl;
+            }
+            else
+            {
+                repo.inprogress(a, order_num, str);
+                /*fout.open("orders.txt");
+                for(int i = 0; i < a; i++)
+                {
+                    if(i==order_num)
+                    {
+                        fout << str[order_num] << " <In progress>" << endl;
+                    }
+                    else
+                    {
+                        fout << str[i] << endl;
+                    }
+                }*/
+
+                cout << "Order marked 'In progress' " << endl;
+            }
+            //fout.close();
+        }
+
+        int x = str[order_num].find("<I");
+        int z = str[order_num].find("ss>");
+        cout << x << " " << z;
+
+        if(status == 'r' || status == 'R')
+        {
+            if(str[order_num].find("Ready") != string::npos)
+            {
+                cout << "Already marked ready" << endl;
+            }
+            else
+            {
+                repo.ready(x, z, a, order_num, str);
+                /*fout.open("orders.txt");
+                for(int i = 0; i < a; i++)
+                {
+                    if(i==order_num)
+                    {
+                        if(str[order_num].find("progress") != string::npos)
+                        {
+                            str[order_num].replace(x, 13, "<Ready>");
+                            fout << str[order_num] << endl;
+                        }
+                        else
+                        {
+                            fout << str[order_num] << " <Ready>" << endl;
+                        }
+
+                    }
+                    else
+                    {
+                        fout << str[i] << endl;
+                    }
+                fout.close();
+                }*/
+                cout << "Order marked 'ready' " << endl;
+            }
+        }
+        cout << "update another order (y/n): ";
+        cin >> cont;
+
+    }while(cont == 'y' || cont == 'Y');
 }
 
 ostream& operator<< (ostream& out, const Domain& domain)

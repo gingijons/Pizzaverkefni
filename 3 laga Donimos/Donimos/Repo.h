@@ -25,6 +25,9 @@ class Repo
         void change_price();
         void change_soda();
         void change_menu();
+        void ready(int x, int z, int a, int order_num, string str[1000]);
+        void inprogress(int a, int order_num, string str[1000]);
+        void markpaid(int a, int order_num, string str[1000]);
 
         friend ostream& operator<< (ostream& out, const Repo& repo);
 
