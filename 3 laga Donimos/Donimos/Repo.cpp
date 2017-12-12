@@ -91,12 +91,13 @@ string Repo::getstore(string store)
     }while(true);
 }
 
-void Repo::write_order(string size, string crust, vector<string> top, int price, char paid, string store, string p_or_d, int a)
+void Repo::write_order(string size, string crust, vector<string> top, int price, char paid, string store, string p_or_d, int a, string soda, bool breadsticks)
 {
     ofstream fout;
     fout.open("orders.txt", ios::app);
 
     cout << "<" << a+1 << "> <" << size << "> <" << crust << "> <";
+    fout << "<" << a+1 << "> <" << size << "> <" << crust << "> <";
     for(unsigned int i = 0; i < top.size(); i++)
     {
         if(!top[i].empty())
@@ -104,32 +105,11 @@ void Repo::write_order(string size, string crust, vector<string> top, int price,
             if(i==top.size()-1)
             {
                 cout << top[i];
-            }
-            else
-            {
-                cout << top[i] << " ";
-            }
-
-        }
-        if(top[i].empty()==true)
-        {
-            break;
-        }
-    }
-    cout << "> <" << price << ">";
-
-    fout << "<" << a+1 << "> <" << size << "> <" << crust << "> <";
-
-    for(unsigned int i = 0; i < top.size(); i++)
-    {
-        if(!top[i].empty())
-        {
-            if(i==top.size()-1)
-            {
                 fout << top[i];
             }
             else
             {
+                cout << top[i] << " ";
                 fout << top[i] << " ";
             }
 
@@ -140,6 +120,19 @@ void Repo::write_order(string size, string crust, vector<string> top, int price,
         }
     }
 
+    if(breadsticks == true)
+    {
+        fout << "> <BS";
+        cout << "> <BS";
+    }
+
+    if(!soda.empty())
+    {
+        fout << "> <" << soda;
+        cout << "> <" << soda;
+    }
+
+    cout << "> <" << price << ">";
     fout << "> <" << price << ">";
 
     if(paid == 'y' || paid == 'Y')
@@ -148,7 +141,7 @@ void Repo::write_order(string size, string crust, vector<string> top, int price,
         cout << " <greidd>";
     }
 
-    else if(p_or_d == "d" || p_or_d == "D")
+    if(p_or_d == "d" || p_or_d == "D")
     {
         fout << " <Delivery>";
         cout << " <Delivery>";
@@ -166,6 +159,52 @@ void Repo::write_order(string size, string crust, vector<string> top, int price,
     fout.close();
     a++;
 }
+
+string Repo::readsoda()
+{
+    ifstream bin;
+    string sodalist[50];
+    ifstream sod;
+    string soda;
+    string b;
+    int a = 0;
+
+    bin.open("sodas.txt");
+    while(getline(bin, b))
+    {
+        a++;
+    }
+    cout << a;
+    sod.open("sodas.txt");
+    for(int i = 0; i < a; i++)
+    {
+        getline(sod, sodalist[i]);
+    }
+    do
+    {
+        cout << "Sodas (";
+        for(int i = 0; i < a; i++)
+        {
+            cout << sodalist[i] << " ";
+        }
+        cout << "): ";
+        cin >> soda;
+        for(int i = 0; i < a; i++)
+        {
+            if(sodalist[i] == soda)
+            {
+                return soda;
+                break;
+
+            }
+        }
+        cout << "invalid input" << endl;
+
+    }while(true);
+
+    return soda;
+}
+
 
 ostream& operator<< (ostream& out, const Repo& repo)
 {

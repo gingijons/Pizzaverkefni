@@ -16,7 +16,9 @@ class Repo
 
         void readorders(int& a, string str[1000]);
         string getstore(string store);
-        void write_order(string size, string crust, vector<string> top, int price, char paid, string store, string p_or_d, int a);
+        void write_order(string size, string crust, vector<string> top, int price, char paid, string store, string p_or_d, int a, string soda, bool breadsticks);
+        string readsoda();
+
         friend ostream& operator<< (ostream& out, const Repo& repo);
 
     protected:

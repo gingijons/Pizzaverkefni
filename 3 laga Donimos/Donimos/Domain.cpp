@@ -78,7 +78,7 @@ void Domain::on_menu(vector<string> *top, string sorted)
     }
 }
 
-int Domain::getprice(string size, int j)
+int Domain::getprice(string size, int j, bool breadsticks, string soda)
 {
     int price;
 
@@ -100,6 +100,16 @@ int Domain::getprice(string size, int j)
     if(size == "sto" && j == 2)
     {
         price = 1690;
+    }
+
+    if(!soda.empty())
+    {
+        price += 390;
+    }
+
+    if(breadsticks == true)
+    {
+        price += 590;
     }
 
     return price;
@@ -138,14 +148,14 @@ char Domain::pickup_or_delivery()
 
 bool Domain::getbreadsticks()
 {
-    bool breadsticks;
+    char add;
     do
     {
         cout << "breadsticks (y/n): ";
-        cin >> breadsticks;
-    }while(breadsticks != 'y' && breadsticks != 'Y' && breadsticks != 'n' && breadsticks != 'N');
+        cin >> add;
+    }while(add != 'y' && add != 'Y' && add != 'n' && add != 'N');
 
-    if(breadsticks == 'y' || breadsticks == 'Y')
+    if(add == 'y' || add == 'Y')
     {
         return true;
     }
@@ -157,7 +167,20 @@ bool Domain::getbreadsticks()
 
 string Domain::getsoda()
 {
+    Repo repo;
+    char add;
+    string type;
+    do
+    {
+        cout << "Add a soda? (y/n): ";
+        cin >> add;
+    }while(add != 'y' && add != 'Y' && add != 'n' && add != 'N');
 
+    if(add == 'y' || add == 'Y' )
+    {
+        type = repo.readsoda();
+    }
+    return type;
 }
 
 ostream& operator<< (ostream& out, const Domain& domain)

@@ -49,11 +49,11 @@ void Donimos::neworder(int a)
         domain.on_menu(&top, sorted);
         soda = domain.getsoda();
         breadsticks = domain.getbreadsticks();
-        price = domain.getprice(size, j);
+        price = domain.getprice(size, j, breadsticks, soda);
         paid = donimos.paid();
         store = repo.getstore(store);
         p_or_d = domain.pickup_or_delivery();
-        repo.write_order(size, crust, top, price, paid, store, p_or_d, a);
+        repo.write_order(size, crust, top, price, paid, store, p_or_d, a, soda, breadsticks);
         a++;
 
         do

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1512675605 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\donimos.cpp
+1513024223 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\donimos.cpp
 	"Donimos.h"
 	"Domain.h"
 	"MainUI.h"
@@ -7,24 +7,25 @@
 	<iostream>
 	<algorithm>
 
-1512675108 c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\donimos.h
+1513018307 c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\donimos.h
 	<string>
 	"Repo.h"
 	"Domain.h"
 	"MainUI.h"
 	<vector>
 
-1512671727 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\repo.cpp
+1513024568 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\repo.cpp
 	"Repo.h"
 	"Domain.h"
 	"MainUI.h"
 	"Donimos.h"
 	<fstream>
 
-1512671727 c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\repo.h
+1513024028 c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\repo.h
 	<string>
+	<vector>
 
-1512580105 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\main.cpp
+1513018307 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\main.cpp
 	<iostream>
 	"MainUI.h"
 	"Donimos.h"
@@ -37,13 +38,13 @@
 1512576051 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\mainui.cpp
 	"MainUI.h"
 
-1512675585 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\domain.cpp
+1513024705 source:c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\domain.cpp
 	"Domain.h"
 	"MainUI.h"
 	"Donimos.h"
 	"Repo.h"
 
-1512675541 c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\domain.h
+1513024188 c:\users\gingi\desktop\vnl1\pizzaverkefni\3 laga donimos\donimos\domain.h
 	<iostream>
 	"Donimos.h"
 	<vector>
