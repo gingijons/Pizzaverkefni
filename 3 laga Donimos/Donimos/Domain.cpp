@@ -13,10 +13,11 @@ Domain::Domain()
 void Domain::login(char* login)
 {
     Donimos donimos;
+    Repo repo;
 
     if(*login == 'A' || *login == 'a')
     {
-
+        repo.admin_ui();
     }
     if(*login == 'M' || *login == 'm')
     {
@@ -31,6 +32,36 @@ void Domain::login(char* login)
 
     }
 
+}
+
+void Domain::change(int num)
+{
+    Repo repo;
+
+    if(num == 1)
+    {
+        repo.change_stores();
+    }
+
+    if(num == 2)
+    {
+        repo.change_toppings();
+    }
+
+    if(num == 3)
+    {
+        repo.change_price();
+    }
+
+    if(num == 4)
+    {
+        repo.change_soda();
+    }
+
+    if(num == 5)
+    {
+        repo.change_menu();
+    }
 }
 
 void Domain::printorders(int a, string str[])
@@ -78,7 +109,7 @@ void Domain::on_menu(vector<string> *top, string sorted)
     }
 }
 
-int Domain::getprice(string size, int j)
+int Domain::getprice(string size, int j, bool breadsticks, string soda)
 {
     int price;
 
@@ -100,6 +131,16 @@ int Domain::getprice(string size, int j)
     if(size == "sto" && j == 2)
     {
         price = 1690;
+    }
+
+    if(!soda.empty())
+    {
+        price += 390;
+    }
+
+    if(breadsticks == true)
+    {
+        price += 590;
     }
 
     return price;
@@ -138,14 +179,14 @@ char Domain::pickup_or_delivery()
 
 bool Domain::getbreadsticks()
 {
-    bool breadsticks;
+    char add;
     do
     {
         cout << "breadsticks (y/n): ";
-        cin >> breadsticks;
-    }while(breadsticks != 'y' && breadsticks != 'Y' && breadsticks != 'n' && breadsticks != 'N');
+        cin >> add;
+    }while(add != 'y' && add != 'Y' && add != 'n' && add != 'N');
 
-    if(breadsticks == 'y' || breadsticks == 'Y')
+    if(add == 'y' || add == 'Y')
     {
         return true;
     }
@@ -157,7 +198,20 @@ bool Domain::getbreadsticks()
 
 string Domain::getsoda()
 {
+    Repo repo;
+    char add;
+    string type;
+    do
+    {
+        cout << "Add a soda? (y/n): ";
+        cin >> add;
+    }while(add != 'y' && add != 'Y' && add != 'n' && add != 'N');
 
+    if(add == 'y' || add == 'Y' )
+    {
+        type = repo.readsoda();
+    }
+    return type;
 }
 
 ostream& operator<< (ostream& out, const Domain& domain)

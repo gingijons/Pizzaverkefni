@@ -51,3 +51,7 @@
 <51> <lit> <italy> <ana sve> <1799> <greidd> <mjodd>
 <52> <lit> <org> <ana> <1649> <greidd> <mjodd>
 <53> <lit> <italy> <ppp> <1649> <greidd> <skeifan>
+<54> <lit> <org> <Hawaiian> <BS> <coke> <2779> <greidd> <skeifan>
+<55> <sto> <org> <Bahamas> <BS> <fanta> <4429> <Delivery> <skeifan>
+<56> <lit> <org> <Bahamas> <BS> <coke> <2929> <greidd> <skeifan>
+<57> <lit> <italy> <Hawaiian> <BS> <fanta> <2779> <greidd> <Pickup> <skeifan>
