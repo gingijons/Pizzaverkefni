@@ -2,6 +2,7 @@
 #include "MainUI.h"
 #include "Donimos.h"
 #include "Repo.h"
+#include <string>
 
 
 Domain::Domain()
@@ -29,7 +30,7 @@ void Domain::login(char* login)
     }
     if(*login == 'C' || *login == 'c')
     {
-
+        donimos.cashier();
     }
 
 }
@@ -61,6 +62,11 @@ void Domain::change(int num)
     if(num == 5)
     {
         repo.change_menu();
+    }
+
+    if(num == 6)
+    {
+        repo.change_crust();
     }
 }
 
@@ -99,14 +105,14 @@ void Domain::listOrder(int a, string str[])
     }
 }
 
-void Domain::listOfTen(int a, string str[])
+/*void Domain::listOfTen(int a, string str[])
 {
     Donimos donimos;
     cout << "Printing out the last ten orders: " << endl;
 
     donimos.list_of_ten(a, str);
 
-}
+}*/
 
 void Domain::markPaid(int a, string str[])
 {
@@ -434,6 +440,23 @@ void Domain::makeline_list(int a, string str[]){
         cin >> cont;
 
     }while(cont == 'y' || cont == 'Y');
+}
+
+string Domain::comment()
+{
+    string comment;
+    char comm;
+
+    cout << "Would you like to add a comment? (y/n) ";
+
+    cin >> comm;
+    if (comm == 'y' || comm == 'Y')
+    {
+        cin.ignore();
+        cout << "Add comment: ";
+        getline(cin, comment);
+    }
+    return comment;
 }
 
 ostream& operator<< (ostream& out, const Domain& domain)

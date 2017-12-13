@@ -50,13 +50,14 @@
 	"Donimos.h"
 	<vector>
 
-1513088980 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\domain.cpp
+1513185823 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\domain.cpp
 	"Domain.h"
 	"MainUI.h"
 	"Donimos.h"
 	"Repo.h"
+	<string>
 
-1513088247 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\domain.h
+1513178504 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\domain.h
 	<iostream>
 	"Donimos.h"
 	<vector>
@@ -64,24 +65,25 @@
 1513086102 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\mainui.h
 	<iostream>
 
-1513086102 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\donimos.h
+1513173722 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\donimos.h
 	<string>
 	"Repo.h"
 	"Domain.h"
 	"MainUI.h"
 	<vector>
 
-1513088980 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\repo.h
+1513187547 c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\repo.h
 	<string>
 	<vector>
 
-1513086102 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\donimos.cpp
+1513187496 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\donimos.cpp
 	"Donimos.h"
 	"Domain.h"
 	"MainUI.h"
 	<vector>
 	<iostream>
 	<algorithm>
+	<string>
 
 1513086102 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\main.cpp
 	<iostream>
@@ -93,7 +95,7 @@
 1513086102 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\mainui.cpp
 	"MainUI.h"
 
-1513091544 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\repo.cpp
+1513189181 source:c:\users\jón grímsson\desktop\vln1\pizzaverkefni\3 laga donimos\donimos\repo.cpp
 	"Repo.h"
 	"Domain.h"
 	"MainUI.h"

@@ -29,6 +29,7 @@ class Domain
         string getsoda();
         void change(int num);
         void makeline_list(int a, string str[]);
+        string comment();
 
 
 

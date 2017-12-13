@@ -16,9 +16,96 @@ void Repo::admin_ui()
 
     int num;
     cout << "What would you like to change?" << endl;
-    cout << "1 = Stores, 2 = Toppings, 3 = Price, 4 = Soda, 5 = Menu: ";
+    cout << "1 = Stores, 2 = Toppings, 3 = Price, 4 = Soda, 5 = Menu, 6 = crust: ";
     cin >> num;
     domain.change(num);
+}
+
+void Repo::change_crust()
+{
+    ifstream st;
+    ifstream bin;
+    ofstream fout;
+    string b;
+    int a = 0;
+    int num = 0;
+
+    bin.open("crusts.txt", ios::app);
+
+    while(getline(bin, b))
+    {
+        a++;
+    }
+    bin.close();
+
+    string crustlist[50];
+
+    st.open("crusts.txt");
+
+    if(st.is_open())
+    {
+
+    }
+    for(int i = 0; i < a; i++)
+    {
+        getline(st, crustlist[i]);
+        //cout << crustlist[i];
+    }
+    st.close();
+
+    cout << endl;
+
+    cout << endl;
+    cout << "1 = Add crust, 2 = remove crust: ";
+    cin >> num;
+
+    if(num == 1)
+    {
+        string newcrust;
+        cout << "Enter name (all lowercase): ";
+        cin.ignore();
+        getline(cin, newcrust);
+        cout << newcrust;
+        fout.open("crusts.txt");
+        for(int i = 0; i < a; i++)
+        {
+            fout << crustlist[i] << endl;
+        }
+        fout << newcrust;
+        fout.close();
+    }
+    if(num == 2)
+    {
+        int num;
+        st.open("crusts.txt");
+        for(int i = 0; i < a; i++)
+        {
+            getline(st, crustlist[i]);
+            cout << i + 1 << " = " << crustlist[i] << endl;
+        }
+        cout << "What crust to remove: ";
+        cin >> num;
+        num -= 1;
+        fout.open("crusts.txt");
+        for(int i = 0; i < a; i++)
+        {
+            if(i != num)
+            {
+                fout << crustlist[i] << endl;
+            }
+        }
+        cout << endl;
+
+        if(num >= a)
+        {
+            cout << "nothing was removed";
+        }
+        else
+        {
+            cout << crustlist[num] << " has been removed" << endl;
+        }
+    }
+
 }
 
 void Repo::change_stores()
@@ -44,7 +131,7 @@ void Repo::change_stores()
 
     if(st.is_open())
     {
-        cout << "heyy";
+
     }
     for(int i = 0; i < a; i++)
     {
@@ -186,6 +273,47 @@ void Repo::readorders(int& a, string str[1000])
     //cout << a << " ";
 }
 
+/*void Repo::readcrust(int a)
+{
+    ifstream fin;
+    ifstream bin;
+    ofstream fout;
+    string b;
+
+    //cout << a << " ";
+
+    bin.open("crusts.txt", ios::app);
+
+    while(getline(bin, b))
+    {
+        a++;
+    }
+
+    //cout << a << " ";
+
+    fin.open("crusts.txt");
+
+
+    for(int i = 0; i < a; i++)
+    {
+        getline(fin, str[i]);
+        //cout << str[i] << endl;
+        //cout << str[i].find("greidd")
+    }
+    bin.close();
+    fin.close();
+
+    fout.open("crusts.txt");
+
+    for(int i = 0; i < a; i++)
+    {
+        fout << str[i] << endl;
+    }
+    fout.close();
+
+    //cout << a << " ";
+}*/
+
 string Repo::getstore(string store)
 {
     ifstream bin;
@@ -206,7 +334,7 @@ string Repo::getstore(string store)
     }
     do
     {
-        cout << "Store (";
+        cout << " Stores (";
         for(int i = 0; i < a; i++)
         {
             cout << storelist[i] << " ";
@@ -227,7 +355,49 @@ string Repo::getstore(string store)
     }while(true);
 }
 
-void Repo::write_order(string size, string crust, vector<string> top, int price, char paid, string store, string p_or_d, int a, string soda, bool breadsticks)
+string Repo::getcrust(string crust)
+{
+    ifstream bin;
+    string crustlist[50];
+    ifstream st;
+    string b;
+    int a = 0;
+    bin.open("crusts.txt");
+    while(getline(bin, b))
+    {
+        a++;
+    }
+    cout << a;
+    st.open("crusts.txt");
+    for(int i = 0; i < a; i++)
+    {
+        getline(st, crustlist[i]);
+    }
+    do
+    {
+        cout << " Crusts: ";
+        for(int i = 0; i < a; i++)
+        {
+            cout << crustlist[i] << " | ";
+        }
+        cout << ": ";
+        cin.ignore();
+        getline(cin, crust);
+        for(int i = 0; i < a; i++)
+        {
+            if(crustlist[i] == crust)
+            {
+                return crust;
+                break;
+
+            }
+        }
+    cout << "invalid crust input" << endl;
+
+    }while(true);
+}
+
+void Repo::write_order(string size, string crust, vector<string> top, int price, char paid, string store, string p_or_d, int a, string soda, bool breadsticks, string comment)
 {
     ofstream fout;
     fout.open("orders.txt", ios::app);
@@ -289,8 +459,14 @@ void Repo::write_order(string size, string crust, vector<string> top, int price,
         cout << " <Pickup>";
     }
 
-    cout << " <" << store << ">" << endl;
-    fout << " <" << store << ">" << endl;
+    cout << " <" << store << ">";
+    fout << " <" << store << ">";
+
+    if(!comment.empty())
+    {
+        cout << " <" << comment << ">" << endl;
+        fout << " <" << comment << ">" << endl;
+    }
 
     fout.close();
     a++;
@@ -384,6 +560,54 @@ void Repo::markpaid(int a, int order_num, string str[1000])
         }
         fout.close();
     }
+}
+
+string Repo::readtoppings()
+{
+    ifstream bin;
+    string toppings_list[50];
+    ifstream top;
+    string toppings;
+    string t;
+    int a = 0;
+
+    bin.open("toppings.txt");
+    while(getline(bin, t))
+    {
+        a++;
+    }
+    bin.close();
+
+    cout << a;
+    top.open("toppings.txt");
+    for(int i = 0; i < a; i++)
+    {
+        getline(top, toppings_list[i]);
+    }
+    do
+    {
+        cout << "Toppings (";
+        for(int i = 0; i < a; i++)
+        {
+            cout << toppings_list[i] << " ";
+        }
+        cout << "): ";
+        cin >> toppings;
+        for(int i = 0; i < a; i++)
+        {
+            if(toppings_list[i] == toppings)
+            {
+                return toppings;
+                break;
+
+            }
+        }
+        cout << "invalid input" << endl;
+
+    }while(true);
+
+    return toppings;
+
 }
 
 ostream& operator<< (ostream& out, const Repo& repo)

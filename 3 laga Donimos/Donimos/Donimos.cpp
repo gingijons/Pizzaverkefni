@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
+#include <string>
 
 Donimos::Donimos()
 {
@@ -16,7 +17,7 @@ void Donimos::order()
     Domain domain;
 
     repo.readorders(a, str);
-    domain.printorders(a, str);
+    //domain.printorders(a, str);
     domain.add_order(a);
 }
 
@@ -24,7 +25,7 @@ void Donimos::cashier()
 {
     Domain domain;
     repo.readorders(a, str);
-    domain.listOrder(a, str);
+    domain.printorders(a, str);
     domain.markPaid(a, str);
 }
 
@@ -54,11 +55,12 @@ void Donimos::neworder(int a)
     string crust;
     string soda;
     bool breadsticks;
+    string comment;
 
     do
     {
         size = donimos.getpizzasize();
-        crust = donimos.getcrust();
+        crust = repo.getcrust(crust);
         donimos.gettoppings(&top, &j);
         sorted = donimos.sorttoppings(&top);
         domain.on_menu(&top, sorted);
@@ -68,7 +70,8 @@ void Donimos::neworder(int a)
         paid = donimos.paid();
         store = repo.getstore(store);
         p_or_d = domain.pickup_or_delivery();
-        repo.write_order(size, crust, top, price, paid, store, p_or_d, a, soda, breadsticks);
+        comment = domain.comment();
+        repo.write_order(size, crust, top, price, paid, store, p_or_d, a, soda, breadsticks, comment);
         a++;
 
         do
@@ -107,7 +110,7 @@ string Donimos::getpizzasize()
 
 }
 
-string Donimos::getcrust()
+/*string Donimos::getcrust()
 {
     string crust;
 
@@ -127,7 +130,7 @@ string Donimos::getcrust()
     while(true);
 
     return crust;
-}
+}*/
 
 void Donimos::gettoppings(vector<string>* top, int* j)
 {
@@ -158,11 +161,19 @@ void Donimos::gettoppings(vector<string>* top, int* j)
 
 void Donimos::y_printorders(int a, string str[])
 {
+    Repo repo;
+    int num;
+    string store;
+
+    store = repo.getstore(store);
+
     for(int i = 0; i < a; i++)
     {
-        cout << str[i] << endl;
+        if(str[i].find(store) != string::npos)
+        {
+            cout << str[i] << endl;
+        }
     }
-    cout << a;
 }
 
 string Donimos::sorttoppings(vector<string> *top)
